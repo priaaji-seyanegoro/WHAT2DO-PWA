@@ -3,13 +3,13 @@
   "short_name": "W2DO",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#FF9D2",
+  "background_color": "#9c27b0",
   "theme_color": "#6a1b9a",
-  "orientation": "potrait-primary",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "img/icon/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "64x64",
       "type": "image/x-icon"
     },
     {
