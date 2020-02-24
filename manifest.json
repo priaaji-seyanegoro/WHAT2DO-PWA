@@ -1,0 +1,26 @@
+{
+  "name": "WHAT2DO",
+  "short_name": "W2DO",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FF9D2",
+  "theme_color": "#6a1b9a",
+  "orientation": "potrait-primary",
+  "icons": [
+    {
+      "src": "img/icon/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "img/icon/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icon/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
