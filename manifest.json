@@ -8,11 +8,6 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "img/icon/favicon.ico",
-      "sizes": "64x64",
-      "type": "image/x-icon"
-    },
-    {
       "src": "img/icon/logo192.png",
       "type": "image/png",
       "sizes": "192x192"
