@@ -44,6 +44,17 @@ self.addEventListener("activate", e => {
   );
 });
 
+//limiting cache
+const limitCacheSize = (name, size) => {
+  caches.open(name).then(cache => {
+    cache.keys().then(keys => {
+      if (keys.length > size) {
+        cache.delete(keys[0]).then(limitCacheSize(name, size));
+      }
+    });
+  });
+};
+
 // fetch event
 self.addEventListener("fetch", e => {
   //console.log('fetch event', e);
@@ -59,11 +70,18 @@ self.addEventListener("fetch", e => {
             .then(fetchRes => {
               return caches.open(dynamicCacheName).then(cache => {
                 cache.put(e.request.url, fetchRes.clone());
+                // check cached items size
+                limitCacheSize(dynamicCacheName, 15);
                 return fetchRes;
               });
             })
         );
       })
-      .catch(() => caches.match("/pages/fallback.html"))
+      //handle page cannot cache
+      .catch(() => {
+        if (e.request.url.indexOf(".html") > -1) {
+          return caches.match("/pages/fallback.html");
+        }
+      })
   );
 });
